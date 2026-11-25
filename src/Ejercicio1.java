@@ -1,26 +1,23 @@
-import java.util.List;
 
 public class Ejercicio1 extends Thread{
-    private List<Integer> lista;
-    private int cant;
+    private int[] lista;
+    private double resultado;
 
-    public Ejercicio1(List<Integer> lista, int cant){
-        this.lista=lista;
-        this.cant =  cant;
-    }
-
-    int[] lista1 = new int[this.cant];
-    public static void media1(List<Integer> lista, int num){
-        if (!lista.isEmpty()){
-            for (Integer integer : lista) {
-                
-            }
-        }
+    public Ejercicio1(int[] lista, double  resultado){
+        this.lista= lista;
+        this.resultado = resultado;
     }
 
     @Override
     public void run() {
-        media1(this.lista, this.cant);
+        for (int i = 0; i < this.lista.length; i++){
+            this.resultado += this.lista[i];
+        }
+        this.resultado = this.resultado /this.lista.length;
+    }
+
+    public double getresultado() {
+        return resultado;
     }
     
 }
